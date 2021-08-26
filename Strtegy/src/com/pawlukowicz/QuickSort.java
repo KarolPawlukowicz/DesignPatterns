@@ -32,7 +32,7 @@ public class QuickSort implements Strategy {
         }
     }
 
-    private void swap(int firstIndex, int secondIndex) {
+    private void swapElementsOfArray(int firstIndex, int secondIndex) {
         int temp = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temp;
@@ -46,10 +46,10 @@ public class QuickSort implements Strategy {
         for(int i = startingIndex; i <= endingIndex - 1; i++) {
             if (array[i] < pivot) {
                 indexOfSmallerElement++;
-                swap(indexOfSmallerElement, i);
+                swapElementsOfArray(indexOfSmallerElement, i);
             }
         }
-        swap(indexOfSmallerElement + 1, endingIndex);
+        swapElementsOfArray(indexOfSmallerElement + 1, endingIndex);
         return (indexOfSmallerElement + 1);
     }
 

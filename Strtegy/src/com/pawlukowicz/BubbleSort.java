@@ -1,7 +1,6 @@
 package com.pawlukowicz;
 
 public class BubbleSort implements Strategy {
-
     private int []array;
 
     public BubbleSort(int[] array) {

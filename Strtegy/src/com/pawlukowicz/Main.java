@@ -6,7 +6,7 @@ public class Main {
     public static int minValueOfRandomNumber = 0;
     public static int maxValueOfRandomNumber = 10;
 
-    private static void initializeArray(int []array){
+    private static void fillArrayWithRandomNumbers(int []array){
         for(int i = 0 ; i < array.length ; i++){
             array[i] = ThreadLocalRandom.current().nextInt(minValueOfRandomNumber, maxValueOfRandomNumber + 1);
         }
@@ -14,21 +14,25 @@ public class Main {
 
     public static void main(String[] args) {
         int arraySize = 10;
-        int []firstArray = new int[arraySize];
-        int []secondArray = new int[arraySize];
+        int []array = new int[arraySize];
 
-        initializeArray(firstArray);
-        initializeArray(secondArray);
+        fillArrayWithRandomNumbers(array);
 
-
-        Strategy bubbleSort = new BubbleSort(firstArray);
-        Strategy quickSort = new QuickSort(secondArray);
+        Strategy bubbleSort = new BubbleSort(array);
+        Strategy quickSort = new QuickSort(array);
+        Strategy selectionSort = new SelectionSort(array);
 
         Context context = new Context(bubbleSort);
         context.doSomething();
 
 
+        fillArrayWithRandomNumbers(array);
         context.setStrategy(quickSort);
+        context.doSomething();
+
+
+        fillArrayWithRandomNumbers(array);
+        context.setStrategy(selectionSort);
         context.doSomething();
     }
 }
