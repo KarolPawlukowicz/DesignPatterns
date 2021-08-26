@@ -12,6 +12,6 @@ public class Context {
     }
 
     public void doSomething(){
-        strategy.sort();
+        strategy.sortArray();
     }
 }

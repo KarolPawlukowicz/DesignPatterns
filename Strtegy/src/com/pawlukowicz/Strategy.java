@@ -1,6 +1,5 @@
 package com.pawlukowicz;
 
 public interface Strategy {
-
-    public void sort();
+    public void sortArray();
 }
