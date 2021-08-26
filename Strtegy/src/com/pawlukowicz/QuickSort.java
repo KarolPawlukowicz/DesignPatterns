@@ -1,9 +1,9 @@
 package com.pawlukowicz;
 
-public class ConcreteStrategyB implements Strategy {
+public class QuickSort implements Strategy {
 
     @Override
-    public void sort() {
+    public void sortArray() {
         System.out.println("sortowanie strategia B");
     }
 }
