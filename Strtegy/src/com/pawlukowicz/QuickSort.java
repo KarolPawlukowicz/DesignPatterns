@@ -15,20 +15,20 @@ public class QuickSort implements Strategy {
     public void sortArray() {
         System.out.println("Before Quicksort");
         printArray();
-        quickSort(startingIndex, endingIndex);
+        sortArrayUsingQuickSort(startingIndex, endingIndex);
 
         System.out.println("Sorted array: ");
         printArray();
     }
 
-    private void quickSort(int startingIndex, int endingIndex)
+    private void sortArrayUsingQuickSort(int startingIndex, int endingIndex)
     {
         if (startingIndex < endingIndex)
         {
             int partitioningIndex = partition(startingIndex, endingIndex);
 
-            quickSort(startingIndex, partitioningIndex - 1);
-            quickSort(partitioningIndex + 1, endingIndex);
+            sortArrayUsingQuickSort(startingIndex, partitioningIndex - 1);
+            sortArrayUsingQuickSort(partitioningIndex + 1, endingIndex);
         }
     }
 
