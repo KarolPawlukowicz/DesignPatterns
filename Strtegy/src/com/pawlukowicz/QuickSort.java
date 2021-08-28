@@ -13,12 +13,12 @@ public class QuickSort implements Strategy {
 
     @Override
     public void sortArray() {
-        System.out.println("Before Quicksort");
-        printArray();
+        System.out.println("Quicksort");
+        //printArray();
         sortArrayUsingQuickSort(startingIndex, endingIndex);
 
-        System.out.println("Sorted array: ");
-        printArray();
+        //System.out.println("Sorted array: ");
+        //printArray();
     }
 
     private void sortArrayUsingQuickSort(int startingIndex, int endingIndex)

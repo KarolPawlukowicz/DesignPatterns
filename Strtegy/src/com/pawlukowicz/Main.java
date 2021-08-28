@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int arraySize = 10;
+        int arraySize = 1000;
         int []array = new int[arraySize];
 
         fillArrayWithRandomNumbers(array);
@@ -23,16 +23,16 @@ public class Main {
         Strategy selectionSort = new SelectionSort(array);
 
         Context context = new Context(bubbleSort);
-        context.doSomething();
+        context.measureSortTime();
 
 
         fillArrayWithRandomNumbers(array);
         context.setStrategy(quickSort);
-        context.doSomething();
+        context.measureSortTime();
 
 
         fillArrayWithRandomNumbers(array);
         context.setStrategy(selectionSort);
-        context.doSomething();
+        context.measureSortTime();
     }
 }

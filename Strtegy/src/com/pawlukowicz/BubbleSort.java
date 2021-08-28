@@ -9,8 +9,8 @@ public class BubbleSort implements Strategy {
 
     @Override
     public void sortArray() {
-        System.out.println("Before Bubble sort");
-        printArray();
+        System.out.println("Bubblesort");
+        //printArray();
 
         int arrayLength = array.length;
         for (int i = 0; i < arrayLength-1; i++) {
@@ -22,8 +22,8 @@ public class BubbleSort implements Strategy {
                 }
             }
         }
-        System.out.println("Sorted array: ");
-        printArray();
+       // System.out.println("Sorted array: ");
+       // printArray();
     }
 
     private void printArray(){

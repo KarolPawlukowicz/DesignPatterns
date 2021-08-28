@@ -9,8 +9,8 @@ public class SelectionSort implements Strategy {
 
     @Override
     public void sortArray() {
-        System.out.println("Before Insertion sort");
-        printArray();
+        System.out.println("InsertionSort");
+        //printArray();
 
         int arrayLength = array.length;
         for (int i = 0 ; i < arrayLength - 1 ; i++) {
@@ -23,8 +23,8 @@ public class SelectionSort implements Strategy {
             swapElementsOfArray(minimumElementInArray, i);
         }
 
-        System.out.println("Sorted array: ");
-        printArray();
+        //System.out.println("Sorted array: ");
+        //printArray();
     }
 
     private void swapElementsOfArray(int firstIndex, int secondIndex) {

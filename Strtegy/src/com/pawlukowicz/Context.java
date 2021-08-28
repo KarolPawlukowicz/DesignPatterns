@@ -11,7 +11,11 @@ public class Context {
         this.strategy = strategy;
     }
 
-    public void doSomething(){
+    public long measureSortTime() {
+        long start = System.nanoTime();
         strategy.sortArray();
+        long end = System.nanoTime();
+        System.out.println("Elapsed Time in nano seconds: "+ (end-start));
+        return end-start;
     }
 }
