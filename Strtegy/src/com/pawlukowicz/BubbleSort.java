@@ -8,6 +8,11 @@ public class BubbleSort implements Strategy {
     }
 
     @Override
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
+    @Override
     public void sortArray() {
         System.out.println("Bubblesort");
         //printArray();
