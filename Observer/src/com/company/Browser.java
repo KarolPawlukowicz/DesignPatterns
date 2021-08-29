@@ -9,6 +9,6 @@ public class Browser implements IObserver {
 
     @Override
     public void update(String message) {
-        System.out.println("Im sending a message: " + message + " to " + browserName);
+        System.out.println("Im sending a popup message: " + message + " to " + browserName);
     }
 }
