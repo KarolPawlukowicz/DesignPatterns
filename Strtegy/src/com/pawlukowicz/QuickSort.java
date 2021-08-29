@@ -1,24 +1,42 @@
 package com.pawlukowicz;
 
 public class QuickSort implements Strategy {
-    private int []array;
+    private int []arrayToSort;
+    private int arraySizeIterator;
+    private double[][] dataSort;
     private int startingIndex;
     private int endingIndex;
 
-    public QuickSort(int[] array) {
-        this.array = array;
+    public QuickSort(int[] arrayToSort, int numberOfTimeMeasurement) {
+        this.arrayToSort = arrayToSort;
         startingIndex = 0;
-        endingIndex = array.length-1;
+        endingIndex = arrayToSort.length-1;
+
+        this.arraySizeIterator = 0;
+        this.dataSort = new double[2][numberOfTimeMeasurement];
+        this.dataSort[0][arraySizeIterator] = arrayToSort.length;
     }
 
     @Override
-    public void setArray(int[] array) {
-        this.array = array;
+    public void addTimeToDataset(double measuredTime) {
+        this.dataSort[0][arraySizeIterator] = arrayToSort.length;
+        this.dataSort[1][arraySizeIterator] = measuredTime;
+    }
+
+    @Override
+    public double[][] getData() {
+        return this.dataSort;
+    }
+
+    @Override
+    public void setArray(int[] arrayToSort) {
+        this.arrayToSort = arrayToSort;
+        this.arraySizeIterator++;
     }
 
     @Override
     public void sortArray() {
-        System.out.println("Quicksort");
+        //System.out.println("Quicksort");
         //printArray();
         sortArrayUsingQuickSort(startingIndex, endingIndex);
 
@@ -38,18 +56,18 @@ public class QuickSort implements Strategy {
     }
 
     private void swapElementsOfArray(int firstIndex, int secondIndex) {
-        int temp = array[firstIndex];
-        array[firstIndex] = array[secondIndex];
-        array[secondIndex] = temp;
+        int temp = arrayToSort[firstIndex];
+        arrayToSort[firstIndex] = arrayToSort[secondIndex];
+        arrayToSort[secondIndex] = temp;
     }
 
     private int partition(int startingIndex, int endingIndex)
     {
-        int pivot = array[endingIndex];
+        int pivot = arrayToSort[endingIndex];
         int indexOfSmallerElement = startingIndex - 1;
 
         for(int i = startingIndex; i <= endingIndex - 1; i++) {
-            if (array[i] < pivot) {
+            if (arrayToSort[i] < pivot) {
                 indexOfSmallerElement++;
                 swapElementsOfArray(indexOfSmallerElement, i);
             }
@@ -59,8 +77,8 @@ public class QuickSort implements Strategy {
     }
 
     private void printArray(){
-        for (int i = 0 ; i < array.length ; i++) {
-            System.out.print(array[i] + " ");
+        for (int i = 0 ; i < arrayToSort.length ; i++) {
+            System.out.print(arrayToSort[i] + " ");
         }
         System.out.println();
     }

@@ -11,11 +11,11 @@ public class Context {
         this.strategy = strategy;
     }
 
-    public double measureSortTime() {
+    public void measureSortTime() {
         double start = System.currentTimeMillis();
         strategy.sortArray();
         double end = System.currentTimeMillis();
         System.out.println("Elapsed Time in mili seconds: "+ (end-start));
-        return end-start;
+        strategy.addTimeToDataset(end-start);
     }
 }
