@@ -1,13 +1,11 @@
 package com.pawlukowicz;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Main {
     public static int minValueOfRandomNumber = 0;
-    public static int maxValueOfRandomNumber = 100;
+    public static int maxValueOfRandomNumber = 1000;
 
     private static void fillArrayWithRandomNumbers(int []array){
         for(int i = 0 ; i < array.length ; i++){
@@ -17,9 +15,10 @@ public class Main {
 
     public static void main(String[] args) {
         Chart chart = new Chart();
+        int numberOfTimeMeasurement = 8;
+
 
         // bubble sort
-        int numberOfTimeMeasurement = 4;
         int arraySize = 5000;
         int valueOfIncrementArraySize = 5000;
         int []arrayToSort = new int[arraySize];
