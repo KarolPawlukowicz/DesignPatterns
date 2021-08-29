@@ -8,3 +8,5 @@ In this example we compare three algorithms: bubble sort, insertion sort and qui
 ![image](https://user-images.githubusercontent.com/60007028/131254425-8201bd6d-2773-4aab-8391-4086ff59ad5a.png)
 
 
+## Observer
+Simple blog with subscribe, unsubscribe and notify mechanism. 
